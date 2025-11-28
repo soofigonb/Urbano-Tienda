@@ -1,0 +1,399 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', 'Quicksand', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #ffffff8b;
+  background-image: url('../img/img_fondo.png'); 
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  padding-top: 80px; 
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+nav {
+  background-color: rgba(255, 255, 255, 0.719) !important;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-brand { transition: color 0.3s ease; font-weight: 600; }
+.navbar-brand:hover { color: #d63384 !important; }
+
+.navbar-nav .nav-link { color: #444; transition: color 0.3s ease; font-weight: 500; }
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: #d63384 !important; }
+
+.btn-outline-rosa {
+  border: 1.5px solid #444;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  color: #444;
+}
+.btn-outline-rosa:hover { background-color: #d63384; color: white; border-color: #d63384; }
+
+.navbar .material-symbols-outlined { transition: color 0.3s ease; }
+.navbar .material-symbols-outlined:hover { color: #ff80aa; }
+
+/* =========================================
+   ESTILOS HOME Y CATÁLOGO
+========================================= */
+#texto1{
+  margin-top: -60px;
+}
+.logo-contenedor { display: flex; justify-content: center; align-items: center; margin-top: -150px; }
+.logo-central { max-width: 1000px; width: 90%; height: auto; display: block; margin: 0 auto; }
+
+/* Categorías */
+.categoria-img {
+  width: 160px; 
+  height: 160px; 
+  object-fit: cover; 
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid rgba(255, 192, 203, 0.3); 
+  margin-top: 20px;
+}
+.categoria-img:hover { transform: scale(1.08); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); }
+
+/* Banner Promo */
+.banner-promo .promo-box {
+  background: rgba(248, 187, 208, 0.55); 
+  color: #444; 
+  padding: 3rem;
+  border-radius: 1.5rem; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+.banner-promo .btn {
+  background-color: #fff; 
+  color: #d63384; font-weight: 600;
+  border: none; 
+  transition: 0.3s ease; 
+  padding: 10px 25px;
+}
+.banner-promo .btn:hover { background-color: #f8f9fa; transform: scale(1.05); }
+
+/* Cards catálogo */
+.card-producto {
+  background-color: #ffffff; 
+  border-radius: 16px; 
+  padding: 12px; 
+  height: 100%; 
+  border: 1px solid rgba(0,0,0,0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  cursor: pointer;
+}
+.card-producto:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(214, 51, 132, 0.15); }
+
+.img-contenedor {
+  width: 100%; 
+  height: 300px; 
+  overflow: hidden; 
+  border-radius: 12px;
+  margin-bottom: 15px; 
+  position: relative; 
+  background-color: #f9f9f9;
+}
+.card-producto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card-producto:hover img { transform: scale(1.08); }
+
+.card-producto h5 { font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 5px; }
+.precio { color: #d63384; font-weight: 700; font-size: 1.1rem; }
+
+.mensaje-vacio {
+  padding: 40px; 
+  font-size: 1.2rem; 
+  color: #666; 
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px; 
+  display: inline-block; 
+  border: 2px dashed #ffb3c1;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background-color: rgba(255, 255, 255, 0); 
+  padding: 2rem 0; 
+  text-align: center;
+  font-size: 0.9rem; 
+  color: #555; 
+  border-top: 1px solid #eeeeee69; 
+  margin-top: 3rem;
+}
+.social-icons img { margin: 0 8px; transition: transform 0.3s ease, opacity 0.3s ease; }
+.social-icons img:hover { transform: scale(1.2); opacity: 0.8; }
+
+/* =========================================
+   ESTILOS MODAL (HU-02, HU-03, HU-04)
+========================================= */
+
+/* Tallas */
+.btn-talla {
+  border: 1px solid #444; 
+  background: transparent; 
+  color: #444;
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: 600; 
+  transition: all 0.2s ease;
+}
+.btn-talla:hover { background-color: #333; color: #fff; transform: scale(1.1); }
+.btn-talla.active { background-color: #d63384; color: white; border-color: #d63384; }
+
+.btn-talla.sin-stock {
+  background-color: #e9ecef; 
+  color: #adb5bd; 
+  border-color: #dee2e6;
+  cursor: not-allowed; 
+  text-decoration: line-through;
+}
+.btn-talla.sin-stock:hover { transform: none; background-color: #e9ecef; }
+
+/* Colores */
+.btn-color {
+  width: 35px; 
+  height: 35px; 
+  border-radius: 50%; 
+  border: 1px solid #ddd;
+  cursor: pointer; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  position: relative;
+}
+.btn-color:hover { transform: scale(1.2); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+.btn-color.active {
+  transform: scale(1.1); 
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #d63384; 
+  border-color: transparent;
+}
+.btn-color.sin-stock { opacity: 0.3; cursor: not-allowed; position: relative; }
+
+.btn-color.sin-stock::after {
+  content: ''; 
+  position: absolute; 
+  width: 100%; 
+  height: 2px;
+  background: #555; 
+  top: 50%; 
+  left: 0; 
+  transform: rotate(45deg);
+}
+
+/* HU-04: Cantidad y Errores */
+.input-cantidad {
+  width: 100px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.mensaje-error { color: #dc3545; }
+.mensaje-ok { color: #198754; }
+
+.aviso-error {
+  color: #dc3545; 
+  font-size: 0.9rem; 
+  font-weight: 500;
+  background-color: #ffe6e6; 
+  padding: 8px 15px; 
+  border-radius: 8px;
+}
+
+/* --- ESTILOS HU-04: SELECTOR DE CANTIDAD --- */
+
+/* Ocultar las flechas nativas del input number (Chrome, Safari, Edge, Opera) */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Estilo para cuando el input está deshabilitado */
+#inputCantidad:disabled {
+  background-color: transparent;
+  color: #999;
+}
+
+/* =========================================
+   ESTILOS PÁGINA CARRITO
+========================================= */
+
+.text-rosa {
+  color: #d63384;
+}
+
+/* Contenedor del enlace "Volver" */
+.volver-link-container {
+  margin-top: 5px; 
+  padding: 1rem 2rem;
+  background-color: transparent; 
+}
+
+/* Estilo del enlace "Volver" */
+.volver-link {
+  text-decoration: none;
+  color: #555; 
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.volver-link:hover {
+  color: #d63384; 
+  text-decoration: none;
+  transform: translateX(-5px); 
+}
+
+/* Ajuste para el título principal en la página del carrito */
+main.container h1 {
+    margin-top: 1rem;
+}
+
+/* --- ESTILOS CARRITO NAVBAR --- */
+
+/* Color de la bolita del contador */
+.bg-rosa {
+  background-color: #d63384 !important; 
+  color: white;
+}
+
+/* Ajuste del ícono */
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+/* Hover suave para el carrito */
+.nav-icon-hover {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.nav-icon-hover:hover {
+  transform: scale(1.1);
+  color: #d63384 !important;
+}
+
+/* --- ESTILO BURBUJA FLOTANTE DEL CARRITO (HU-05) --- */
+
+.carrito-flotante {
+  position: fixed;
+  top: 90px; 
+  right: 20px; 
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+  z-index: 1050; 
+  transition: all 0.3s ease;
+}
+
+.carrito-flotante:hover {
+  background-color: #d63384; 
+  color: #fff;
+  transform: scale(1.1); 
+}
+
+.carrito-flotante .material-symbols-outlined {
+  font-size: 30px;
+}
+
+/* El contador (la bolita roja pequeña) */
+.contador-burbuja {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #d63384;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- NUEVOS ESTILOS PARA INDEX --- */
+
+/* 1. Barra de Beneficios (Iconos) */
+.beneficios-tienda {
+  background-color: #fff0f5; /* Fondo rosado muy suave */
+  padding: 3rem 0;
+  border-radius: 1rem;
+}
+
+.icono-beneficio {
+  font-size: 3rem;
+  color: #d63384;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card-beneficio:hover .icono-beneficio {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.card-beneficio h5 {
+  font-weight: 700;
+  color: #444;
+}
+
+/* 2. Sección Cupón de Descuento */
+.cupon-section {
+  background: linear-gradient(135deg, #d63384 0%, #ff80aa 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cupon-box {
+  border: 2px dashed white;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  display: inline-block;
+}
+
+.codigo-cupon {
+  font-family: 'Courier New', monospace;
+  background: white;
+  color: #d63384;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin: 1rem 0;
+  display: inline-block;
+  cursor: pointer;
+}

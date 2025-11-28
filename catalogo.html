@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo | Urbano Tienda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Urbano Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUrbano">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarUrbano">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+
+             <form class="d-flex me-3" role="search" onsubmit="return false;">
+                <input class="form-control me-2" type="search" id="inputBuscador" placeholder="Buscar..." aria-label="Search">
+                <button class="btn boton-submit" type="button">
+                <span class="material-symbols-outlined">search</span>
+                </button>
+            </form>
+
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="btn btn-outline-rosa">Iniciar sesión</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <a href="carrito.html" class="carrito-flotante" title="Ir al carrito">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span id="badgeCarrito" class="contador-burbuja">0</span>
+    </a>
+
+    <main class="container text-center py-5" style="margin-top: 10px;">
+        <h1 class="mb-4 text-catalogo">✧.˚ Catálogo de Productos ˚.✧</h1>
+        <p class="text-muted mb-5">Explora nuestra colección 2025 y encuentra tu estilo ideal ˚˖𓍢ִ໋🌷</p>
+
+        <div class="row justify-content-center" id="contenedorProductos">
+            </div>
+        
+        <div id="mensajeSinResultados" class="d-none">
+            <div class="mensaje-vacio">
+                <p class="mb-0">No hay productos disponibles por el momento 🛍️</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px; border: none;">
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <img id="modalImg" src="" class="img-fluid rounded mb-3" style="max-height: 300px; object-fit: cover;">
+            
+            <h3 id="modalTitulo" class="fw-bold mb-2"></h3>
+            <p id="modalPrecio" class="text-muted fs-5 mb-4"></p>
+            
+            <hr class="w-50 mx-auto mb-4">
+
+            <h5 class="mb-2">Elige tu color:</h5>
+            <div id="contenedorColores" class="d-flex justify-content-center flex-wrap gap-2 mb-4"></div>
+
+            <h5 class="mb-2">Selecciona tu talla:</h5>
+            <div id="contenedorTallas" class="d-flex justify-content-center flex-wrap gap-2 mb-4"></div>
+
+            <h5 class="mb-2">Cantidad:</h5>
+            <div class="d-flex justify-content-center align-items-center mb-1">
+                <button class="btn btn-outline-dark rounded-circle shadow-sm" id="btnRestar" style="width: 40px; height: 40px; font-weight: bold;">-</button>
+                <input type="number" id="inputCantidad" class="form-control text-center mx-3 border-0 fw-bold" value="1" min="1" style="width: 60px; font-size: 1.2rem;">
+                <button class="btn btn-outline-dark rounded-circle shadow-sm" id="btnSumar" style="width: 40px; height: 40px; font-weight: bold;">+</button>
+            </div>
+            
+            <small id="mensajeStock" class="d-block mb-3 text-muted fw-bold">Selecciona color y talla primero</small> 
+
+            <button class="btn btn-dark mt-2 w-75 rounded-pill" id="btnAgregarCarrito">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fw-semibold" id="mensajeToast"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>© 2025 Urbano Tienda | Moda femenina minimalista</p>
+        <div class="social-icons mt-3">
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
+            <a href="#"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
