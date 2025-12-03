@@ -13,9 +13,10 @@
   </head>
 
   <body>
+    <!-- NAVBAR (Sin cambios) -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Urbano Tienda</a>
+            <a class="navbar-brand" href="index.html">Urbano Tienda</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUrbano">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +30,7 @@
             </ul>
 
              <form class="d-flex me-3" role="search" onsubmit="return false;">
-                <input class="form-control me-2" type="search" id="inputBuscador" placeholder="Buscar..." aria-label="Search">
+                <input class="form-control me-2" type="search" id="inputBuscador" placeholder="Buscar prenda..." aria-label="Search">
                 <button class="btn boton-submit" type="button">
                 <span class="material-symbols-outlined">search</span>
                 </button>
@@ -47,20 +48,104 @@
         <span id="badgeCarrito" class="contador-burbuja">0</span>
     </a>
 
-    <main class="container text-center py-5" style="margin-top: 10px;">
-        <h1 class="mb-4 text-catalogo">✧.˚ Catálogo de Productos ˚.✧</h1>
-        <p class="text-muted mb-5">Explora nuestra colección 2025 y encuentra tu estilo ideal ˚˖𓍢ִ໋🌷</p>
+    <main class="container-fluid px-4 px-md-5 py-5" style="margin-top: 20px;">
+        <div class="text-center mb-5">
+            <h1 class="text-catalogo">✧.˚ Catálogo de Productos ˚.✧</h1>
+            <p class="text-muted">Explora nuestra colección 2025 y encuentra tu estilo ideal ˚˖𓍢ִ໋🌷</p>
+        </div>
 
-        <div class="row justify-content-center" id="contenedorProductos">
-            </div>
-        
-        <div id="mensajeSinResultados" class="d-none">
-            <div class="mensaje-vacio">
-                <p class="mb-0">No hay productos disponibles por el momento 🛍️</p>
-            </div>
+        <div class="row">
+            <!-- COLUMNA IZQUIERDA: FILTROS (SIDEBAR) -->
+            <!-- Ajustamos el ancho del sidebar a col-lg-2 o col-xxl-2 para dar más espacio a productos si se desea, 
+                 pero col-lg-3 está bien balanceado -->
+            <aside class="col-lg-3 col-xl-2 mb-5 mb-lg-0">
+                <!-- Sticky para que los filtros sigan al usuario al bajar -->
+                <div class="sticky-top" style="top: 100px; z-index: 900;">
+                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-white">
+                        <div class="card-body">
+                            <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined text-rosa">tune</span> Filtros
+                            </h5>
+                            
+                            <!-- Contador de Resultados -->
+                            <div class="mb-4 pb-3 border-bottom text-center">
+                                <small class="text-muted fw-bold" id="contadorProductos">Cargando...</small>
+                            </div>
+
+                            <!-- Filtro: Ordenar -->
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold mb-1">Ordenar por:</label>
+                                <select id="selectOrden" class="form-select form-select-sm bg-light border-0" style="cursor: pointer;">
+                                    <option value="defecto">Destacados</option>
+                                    <option value="precioAsc">Precio: Menor a Mayor</option>
+                                    <option value="precioDesc">Precio: Mayor a Menor</option>
+                                    <option value="nombreAsc">Nombre: A-Z</option>
+                                </select>
+                            </div>
+
+                            <!-- Filtro: Talla -->
+                            <div class="mb-4">
+                                <label class="form-label text-muted small fw-bold mb-1">Talla:</label>
+                                <select id="selectTalla" class="form-select form-select-sm bg-light border-0" style="cursor: pointer;">
+                                    <option value="todas">Todas las tallas</option>
+                                    <optgroup label="Ropa Superior">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="3XL">3XL</option>
+                                        <option value="4XL">4XL</option>
+                                    </optgroup>
+                                    <optgroup label="Pantalones/Jeans">
+                                        <option value="36">36</option>
+                                        <option value="38">38</option>
+                                        <option value="40">40</option>
+                                        <option value="42">42</option>
+                                        <option value="44">44</option>
+                                        <option value="46">46</option>
+                                        <option value="48">48</option>
+                                        <option value="50">50</option>
+                                        <option value="52">52</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-muted small fw-bold mb-1">Precio:</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <input type="number" id="inputPrecioMin" class="form-control form-control-sm bg-light border-0" placeholder="Min $">
+                                    <span class="text-muted">-</span>
+                                    <input type="number" id="inputPrecioMax" class="form-control form-control-sm bg-light border-0" placeholder="Max $">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- COLUMNA DERECHA: PRODUCTOS -->
+            <section class="col-lg-9 col-xl-10">
+                <div class="row" id="contenedorProductos">
+                    <!-- Aquí JS inyecta las tarjetas -->
+                </div>
+                
+                <!-- Mensaje Sin Resultados -->
+                <div id="mensajeSinResultados" class="d-none text-center py-5">
+                    <div class="mensaje-vacio p-5 rounded-4 border bg-white">
+                        <span class="material-symbols-outlined fs-1 text-muted mb-3" style="font-size: 4rem;">filter_alt_off</span>
+                        <h4 class="fw-bold mt-3">Ups, no encontramos nada</h4>
+                        <p class="text-muted">Intenta cambiar los filtros para ver más resultados.</p>
+                        <button class="btn btn-outline-rosa mt-2" onclick="window.location.reload()">Limpiar filtros</button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
+    <!-- MODAL (Sin cambios) -->
     <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="border-radius: 20px; border: none;">
@@ -96,6 +181,7 @@
       </div>
     </div>
 
+    <!-- TOAST (Sin cambios) -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
@@ -105,14 +191,16 @@
         </div>
     </div>
 
-    <footer class="text-center py-4">
+        <footer class="text-center py-4">
         <p>© 2025 Urbano Tienda | Moda femenina minimalista</p>
         <div class="social-icons mt-3">
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
-            <a href="#"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
+            <a href="https://www.instagram.com/urbano.tienda_25/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
+            <a href="https://www.tiktok.com/"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
+            <a href="https://mail.google.com/"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
         </div>
     </footer>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>

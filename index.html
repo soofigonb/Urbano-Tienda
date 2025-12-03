@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Urbano Tienda</a>
+            <a class="navbar-brand" href="#index.html">Urbano Tienda</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUrbano">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,6 +23,7 @@
                 <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
             </ul>
 
             <form class="d-flex me-3" role="search" onsubmit="return false;">
@@ -72,10 +73,24 @@
     </section>
 
     <section class="mas-vendidos container text-center my-5">
-        <h2 class="mb-4" id="Vendidos">✨ Más Vendidos ✨</h2>
-        <div class="row justify-content-center" id="contenedorMasVendidos">
-            </div>
+        <h2 class="mb-4" id="Vendidos">✨ Destacados de la Semana ✨</h2>
+        
+        <div id="carruselDestacados" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            
+            <div class="carousel-inner" id="contenedorCarruselInner"></div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselDestacados" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselDestacados" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </section>
+
+
 
     <section class="categorias container text-center my-5">
         <h2 class="mb-4" id="texto2">⋆˚࿔ Explora por categoría ࿔˚⋆</h2>
@@ -181,9 +196,9 @@
     <footer class="text-center py-4">
         <p>© 2025 Urbano Tienda | Moda femenina minimalista</p>
         <div class="social-icons mt-3">
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
-            <a href="#"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
+            <a href="https://www.instagram.com/urbano.tienda_25/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
+            <a href="https://www.tiktok.com/"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
+            <a href="https://mail.google.com/"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
         </div>
     </footer>
 

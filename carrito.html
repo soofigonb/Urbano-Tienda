@@ -65,9 +65,23 @@
             
             <div class="d-flex justify-content-end mt-4 align-items-center pe-4">
                 <h4 class="me-4 mb-0 text-muted">Total: <span id="textoTotal" class="fw-bold text-rosa fs-3 ms-2">$0</span></h4>
-                <button class="btn btn-dark rounded-pill px-5 py-2 fs-5 shadow-sm" onclick="alert('¡Gracias por tu compra! 💖')">Ir a Pagar</button>
+                <button class="btn btn-dark rounded-pill px-5 py-2 fs-5 shadow-sm"
+                 onclick="abrirModalGracias()">Ir a Pagar</button>
             </div>
         </div>
+        <div class="modal fade" id="modalGracias" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-center p-4" style="border-radius: 20px;">
+                    <h3 class="text-rosa mb-3 fw-bold">¡Gracias por tu compra! 💖</h3>
+                    <p class="text-muted">Tu pedido está siendo procesado ✨</p>
+
+                    <button class="btn btn-dark rounded-pill px-4 py-2 mt-3" data-bs-dismiss="modal">
+                    Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+
 
         <div id="mensajeCarritoVacio" class="text-center d-none py-5">
             <span class="material-symbols-outlined text-muted mb-3" style="font-size: 5rem; opacity: 0.5;">production_quantity_limits</span>
@@ -80,11 +94,13 @@
     <footer class="text-center py-4">
         <p>© 2025 Urbano Tienda | Moda femenina minimalista</p>
         <div class="social-icons mt-3">
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
-            <a href="#"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
+            <a href="https://www.instagram.com/urbano.tienda_25/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png" alt="Instagram" width="25"></a>
+            <a href="https://www.tiktok.com/"><img src="https://img.freepik.com/fotos-premium/logotipo-tiktok_1080029-103.jpg?semt=ais_hybrid&w=740&q=80" alt="TikTok" width="25"></a>
+            <a href="https://mail.google.com/"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="25"></a>
         </div>
     </footer>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>

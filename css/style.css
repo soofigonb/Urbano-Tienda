@@ -46,6 +46,7 @@ nav {
 .logo-contenedor { display: flex; justify-content: center; align-items: center; margin-top: -150px; }
 .logo-central { max-width: 1000px; width: 90%; height: auto; display: block; margin: 0 auto; }
 
+
 /* Categorías */
 .categoria-img {
   width: 160px; 
@@ -397,3 +398,93 @@ main.container h1 {
   display: inline-block;
   cursor: pointer;
 }
+
+/* =========================================
+   CARRUSEL DESTACADOS (FLECHAS AFUERA)
+========================================= */
+
+#carruselDestacados {
+  padding: 0 60px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: -20px;
+}
+
+.carousel-control-next {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  #carruselDestacados {
+      padding: 0 30px;
+  }
+  .carousel-control-prev { left: -10px; }
+  .carousel-control-next { right: -10px; }
+}
+
+/* =========================================
+   ESTILO PRODUCTOS AGOTADOS
+========================================= */
+.producto-agotado {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.producto-agotado .precio {
+  color: #6c757d !important; /* Precio en gris */
+  text-decoration: line-through;
+}
+
+.producto-agotado::after {
+  content: "AGOTADO";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   AGREGADOS PARA LA TABLA DEL CARRITO 
+   (Necesarios para que el carrito funcione bien)
+========================================= */
+.img-producto-carrito {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.btn-eliminar {
+    color: #dc3545;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-eliminar:hover { transform: scale(1.2); }
+
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
