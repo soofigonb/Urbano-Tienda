@@ -29,7 +29,7 @@ const productos = [
         tallas: [{t:'S', s:7}, {t:'M', s:0}, {t:'L', s:9}, {t:'XL', s:4}], 
         colores: [
             { c: 'Coral', hex: '#ff7f50', s: 5 , imgCambio: 'https://i.pinimg.com/1200x/b5/f4/fd/b5f4fdba9d721461f3b82a3067a7f25e.jpg'},
-            { c: 'Coral', hex: '#ff7f50', s: 5, imgCambio: 'img/top_durazno.png' },
+            { c: 'Coral', hex: '#ff7f50', s: 1, imgCambio: 'img/top_durazno.png' },
             { c: 'Verde Musgo', hex: '#446F55', s: 4, imgCambio: 'img/top_verde.png' },
             { c: 'Azul', hex: '#2A5EBE', s: 3, imgCambio: 'img/top_azul.png' }
 
@@ -53,7 +53,8 @@ const productos = [
         img: "https://i.pinimg.com/736x/f3/fb/cd/f3fbcde48c800cff24e9dc668f430c4e.jpg", 
         tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:4}, {t:'4XL', s:2}], 
         colores: [
-            {c:'Rosa', hex:'#ffb6c1', s:5}
+            {c:'Rosa', hex:'#ffb6c1', s:5},
+            {c:'Celeste', hex:'#63EEFD', s:0}
         ] 
     },
     // 5. Short Encaje
