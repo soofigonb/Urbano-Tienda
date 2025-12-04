@@ -14,9 +14,10 @@ const productos = [
         ],
         colores: [
             { c: 'Rosa', hex: '#ffc0cb', s: 10, imgCambio: 'https://i.pinimg.com/736x/ba/61/16/ba611621404860c0df83ec11f705b13b.jpg' }, 
-            { c: 'Blanco', hex: '#ffffff', s: 5, imgCambio: './img/faldablanca.png' }, 
-            { c: 'Negro', hex: '#000000', s: 8, imgCambio: './img/faldanegra.png' },
-            { c: 'Celeste', hex: '#63EEFD', s: 8, imgCambio: './img/faldaceleste.png' }
+            { c: 'Blanco', hex: '#ffffff', s: 5, imgCambio: 'img/faldablanca.png' },
+            { c: 'Negro', hex: '#000000', s: 8, imgCambio: 'img/faldanegra.png' },
+            { c: 'Celeste', hex: '#63EEFD', s: 8, imgCambio: 'img/faldaceleste.png' }
+
         ]
     },
     // 2. Top Halter
@@ -28,9 +29,10 @@ const productos = [
         tallas: [{t:'S', s:7}, {t:'M', s:0}, {t:'L', s:9}, {t:'XL', s:4}], 
         colores: [
             { c: 'Coral', hex: '#ff7f50', s: 5 , imgCambio: 'https://i.pinimg.com/1200x/b5/f4/fd/b5f4fdba9d721461f3b82a3067a7f25e.jpg'},
-            { c: 'Durazno Celeste', hex: '#F7A86C', s: 0, imgCambio: './img/top_durazno.png'}, 
-            { c: 'Verde Musgo', hex: '#4A6F55', s: 4 , imgCambio: './img/top_verde.png'},
-            { c: 'Azul', hex: '#2A5EBE', s: 3 , imgCambio: './img/top_azul.png'}
+            { c: 'Coral', hex: '#ff7f50', s: 5, imgCambio: 'img/top_durazno.png' },
+            { c: 'Verde Musgo', hex: '#446F55', s: 4, imgCambio: 'img/top_verde.png' },
+            { c: 'Azul', hex: '#2A5EBE', s: 3, imgCambio: 'img/top_azul.png' }
+
             
         ] 
     },
@@ -63,11 +65,11 @@ const productos = [
         tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], 
         colores: [
             {c:'Negro', hex:'#000', s: 5 , imgCambio: 'https://i.pinimg.com/736x/c3/7f/56/c37f560112e2f19421ebd3a6639cdd66.jpg'},
-            {c:'Coral', hex:'#ff7f50', s: 5 , imgCambio: './img/short_coral.png'},
-            {c:'Celeste', hex:'#63EEFD', s: 5 , imgCambio: './img/short_celeste.png'},
-            {c:'Blanco', hex:'#ffffffff', s: 5 , imgCambio: './img/short_blanco.png'},
-            {c:'Rosa Pastel', hex:'#FFE6F8', s: 5 , imgCambio: './img/short_rosapastel.png'},
-            {c:'Rosado Quemado', hex:'#C36A72', s: 5 , imgCambio: './img/short_rosaoscuro.png'}
+            {c:'Coral', hex:'#ff7f50', s: 5 , imgCambio: 'img/short_coral.png'},
+            {c:'Celeste', hex:'#63EEFD', s: 5 , imgCambio: 'img/short_celeste.png'},
+            {c:'Blanco', hex:'#ffffffff', s: 5 , imgCambio: 'img/short_blanco.png'},
+            {c:'Rosa Pastel', hex:'#FFE6F8', s: 5 , imgCambio: 'img/short_rosapastel.png'},
+            {c:'Rosado Quemado', hex:'#C36A72', s: 5 , imgCambio: 'img/short_rosaoscuro.png'}
         ] 
     },
     // 6. Enterito Casual
@@ -149,7 +151,7 @@ const productos = [
     { id: 43, nombre: "Enterito con Cinturón", precio: 15990, img: "https://i.pinimg.com/1200x/56/50/f5/5650f55d0d7a3df6391d237a64a7b8f7.jpg", tallas: [], colores: [] },
     
     // ESCENARIO ERROR (HU-01): Imagen Rota
-    { id: 44, nombre: "Top Básico", precio: 9990, img: "./img/imagenotfoud.png", tallas: [{t:'S', s:5}], colores: [{c:'Blanco', hex:'#fff', s:5}] } 
+    { id: 44, nombre: "Top Básico", precio: 9990, img: "img/imagenotfoud.png", tallas: [{t:'S', s:5}], colores: [{c:'Blanco', hex:'#fff', s:5}] } 
 ];
 
 // ==========================================
