@@ -1,5 +1,5 @@
 // ==========================================
-// 1. BASE DE DATOS SIMULADA (PRODUCTOS)
+// 0. BASE DE DATOS SIMULADA (PRODUCTOS)
 // ==========================================
 const productos = [
     // 1. Falda Volante
@@ -42,7 +42,7 @@ const productos = [
         nombre: "Jean Ancho", 
         precio: 22990, 
         img: "https://i.pinimg.com/736x/b0/7f/65/b07f65dd0fa00c17e9e5d151016f18c7.jpg", 
-        tallas: [{t:'38', s:2}, {t:'40', s:5}, {t:'42', s:5}, {t:'44', s:5}, {t:'46', s:4}, {t:'48', s:2}, {t:'50', s:2}, {t:'52', s:1}], 
+        tallas: [{t:'38', s:2}, {t:'40', s:5}, {t:'42', s:0}, {t:'44', s:5}, {t:'46', s:4}, {t:'48', s:2}, {t:'50', s:0}, {t:'52', s:1}], 
         colores: [{ c: 'Denim', hex: '#5b8ea8', s: 10 }] 
     },
     // 4. Vestido Verano
@@ -53,8 +53,9 @@ const productos = [
         img: "https://i.pinimg.com/736x/f3/fb/cd/f3fbcde48c800cff24e9dc668f430c4e.jpg", 
         tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:4}, {t:'4XL', s:2}], 
         colores: [
-            {c:'Rosa', hex:'#ffb6c1', s:5},
-            {c:'Celeste', hex:'#63EEFD', s:0}
+            {c:'Rosa', hex:'#ffb6c1', s:5, imgCambio: 'https://i.pinimg.com/736x/f3/fb/cd/f3fbcde48c800cff24e9dc668f430c4e.jpg'},
+            {c:'Celeste', hex:'#63EEFD', s:3, imgCambio: 'img/vestido_verano_celeste.png'},
+            {c:'Verde', hex:'#AEBEAB', s:0, imgCambio: 'img/vestido_verano_verde.png'}
         ] 
     },
     // 5. Short Encaje
@@ -74,37 +75,103 @@ const productos = [
         ] 
     },
     // 6. Enterito Casual
-    { id: 6, nombre: "Enterito Casual", precio: 25990, img: "https://i.pinimg.com/1200x/80/dd/02/80dd0242dca583fdca9e5486b2bead2e.jpg", tallas: [{t:'U', s:10}], colores: [{c:'Beige', hex:'#f5f5dc', s:5}] },
+    { id: 6, nombre: "Enterito Casual", precio: 25990, img: "https://i.pinimg.com/1200x/80/dd/02/80dd0242dca583fdca9e5486b2bead2e.jpg", tallas: [{t:'U', s:10}], colores: [
+        {c:'Beige', hex:'#f5f5dc', s:5, imgCambio: 'https://i.pinimg.com/1200x/80/dd/02/80dd0242dca583fdca9e5486b2bead2e.jpg'},
+        {c:'Café', hex:'#6F4E37', s: 5 , imgCambio: 'img/enterito_casual_cafe.png'},
+        {c:'Celeste', hex:'#A7D8F0', s: 3 , imgCambio: 'img/enterito_casual_celeste.png'},
+        {c:'Verde Salvia', hex:'#C7D7A2', s: 10 , imgCambio: 'img/enterito_casula_verdeoliva.png'},
+        {c:'Mostaza', hex:'#C9A431', s: 0 , imgCambio: 'img/enterito_casual_mostaza.png'}
+        
+
+    ] },
     // 7. Top Deportivo
-    { id: 7, nombre: "Top Deportivo", precio: 14990, img: "https://i.pinimg.com/736x/bd/1f/e0/bd1fe0947e2aecdf31d2da3b1491c29b.jpg", tallas: [{t:'S', s:0}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [{c:'Negro', hex:'#000', s:5}] },
+    { id: 7, nombre: "Top Deportivo", precio: 14990, img: "https://i.pinimg.com/736x/bd/1f/e0/bd1fe0947e2aecdf31d2da3b1491c29b.jpg", tallas: [{t:'S', s:0}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [
+        {c:'Negro', hex:'#000', s:5, imgCambio: 'https://i.pinimg.com/736x/bd/1f/e0/bd1fe0947e2aecdf31d2da3b1491c29b.jpg'},
+        {c:'Blanco ', hex:'#ffffff', s: 2 , imgCambio: 'img/top_deportivo_blanco.png'},
+        {c:'Gris', hex:'#b8b8b8ff', s: 4 , imgCambio: 'img/top_deportivo_gris.png'},
+        {c:'Verde Oliva', hex:'#586931ff', s: 0 , imgCambio: 'img/top_deportivo_verdeoliva.png'}
+    ] },
     // 8. Top con Lazo
-    { id: 8, nombre: "Top con Lazo", precio: 12990, img: "https://i.pinimg.com/1200x/ad/18/83/ad1883237694f1ed92d1c7b7500cd8e4.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:3}, {t:'3XL', s:0}], colores: [{c:'Negro', hex:'#000', s:5}] },
+    { id: 8, nombre: "Top con Lazo", precio: 12990, img: "https://i.pinimg.com/1200x/ad/18/83/ad1883237694f1ed92d1c7b7500cd8e4.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:3}, {t:'3XL', s:0}], colores: [
+        {c:'Negro', hex:'#000', s:5 , imgCambio: 'https://i.pinimg.com/1200x/ad/18/83/ad1883237694f1ed92d1c7b7500cd8e4.jpg'},
+        {c:'Amarillo', hex:'#F6DB4A', s: 3 , imgCambio: 'img/top_con_lazo_amarilla.png'},
+        {c:'Rosado', hex:'#C9A6A1', s: 9 , imgCambio: 'img/top_con_lazo_rosada.png'},
+        {c:'Lila', hex:'#C9AEEF', s: 5 , imgCambio: 'img/top_con_lazo_lila.png'},
+        {c:'Rosado Oscuro', hex:'#B79A92', s: 7 , imgCambio: 'img/top_con_lazo_rosado_oscuro.png'}
+    ] },
     // 9. Top Serenity
-    { id: 9, nombre: "Top Serenity", precio: 8990, img: "https://i.pinimg.com/736x/e9/c0/90/e9c090faa3a80eb21118bb97fabf683d.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [{c:'Azul', hex:'#aadde6', s:5}] },
-    // 10. Conjunto Lino
-    { id: 10, nombre: "Conjunto Lino", precio: 14990, img: "https://i.pinimg.com/1200x/0f/a5/03/0fa5035381874ff55decdcf244d37fe0.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [{c:'Verde', hex:'#98ff98', s:5}] },
+    { id: 9, nombre: "Top Serenity", precio: 8990, img: "https://i.pinimg.com/736x/e9/c0/90/e9c090faa3a80eb21118bb97fabf683d.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [
+        {c:'Azul', hex:'#002575ff', s:5 , imgCambio: 'https://i.pinimg.com/736x/e9/c0/90/e9c090faa3a80eb21118bb97fabf683d.jpg'},
+        {c:'Verde Matcha Pastel', hex:'#C7D8B5', s: 3 , imgCambio: 'img/serenity_verde.png'}
+    ] },
+    // 10. Conjunto Cuadrille
+    { id: 10, nombre: "Conjunto Cuadrille", precio: 14990, img: "https://i.pinimg.com/1200x/0f/a5/03/0fa5035381874ff55decdcf244d37fe0.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [
+        {c:'Verde', hex:'#98ff98', s:5, imgCambio: 'https://i.pinimg.com/1200x/0f/a5/03/0fa5035381874ff55decdcf244d37fe0.jpg'},
+        {c:'Rosado', hex:'#F7AFC4', s: 10 , imgCambio: 'img/cuadrille_rosado.png'},
+        {c:'Celeste Bebé', hex:'#A7D4F7', s: 11, imgCambio: 'img/cuadrille_celeste_bb.png'},
+        {c:'Lila', hex:'#D4C4F4', s: 6 , imgCambio: 'img/cuadrille_lila.png'},
+        {c:'Durazno', hex:'#F6B278', s: 3 , imgCambio: 'img/cuadrille_durazno.png'}
+    ] },
     // 11. Top Básico
-    { id: 11, nombre: "Top Básico", precio: 4990, img: "https://i.pinimg.com/736x/65/5e/b1/655eb1d1b45d14652f8ffc83713da015.jpg", tallas: [{t:'XS', s:2}, {t:'S', s:5}, {t:'M', s:0}, {t:'L', s:0}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [{c:'Marrón', hex:'#8b4513', s:5}] },
+    { id: 11, nombre: "Top Básico", precio: 4990, img: "https://i.pinimg.com/736x/65/5e/b1/655eb1d1b45d14652f8ffc83713da015.jpg", tallas: [{t:'XS', s:2}, {t:'S', s:5}, {t:'M', s:0}, {t:'L', s:0}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [
+        {c:'Café', hex:'#8b4513', s:5, imgCambio: 'https://i.pinimg.com/736x/65/5e/b1/655eb1d1b45d14652f8ffc83713da015.jpg'},
+        {c:'Negro', hex:'#000', s: 4 , imgCambio: 'img/basico_negro.png'},
+        {c:'Gris', hex:'#9b9b9bff', s: 6 , imgCambio: 'img/basico_gris.png'},
+        {c:'Blanca', hex:'#ffffff', s: 0 , imgCambio: 'img/basico_blanco.png'}
+    ] },
     // 12. Falda Efecto Cuero
-    { id: 12, nombre: "Falda Efecto Cuero", precio: 19990, img: "https://i.pinimg.com/736x/9b/dc/52/9bdc5261ed92fe056adcca484113c1c5.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}, {t:'4XL', s:2}], colores: [{c:'Burdeo', hex:'#800020', s:5}] },
+    { id: 12, nombre: "Falda Efecto Cuero", precio: 19990, img: "https://i.pinimg.com/736x/9b/dc/52/9bdc5261ed92fe056adcca484113c1c5.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}, {t:'4XL', s:2}], colores: [
+        {c:'Burdeo', hex:'#800020', s:12, imgCambio: 'https://i.pinimg.com/736x/9b/dc/52/9bdc5261ed92fe056adcca484113c1c5.jpg'},
+        {c:'Negro', hex:'#000', s: 6 , imgCambio: 'img/ecocuero_negra.png'},
+        {c:'Café', hex:'#4B2E1F', s: 2 , imgCambio: 'img/escocuero_cafe.png'},
+        {c:'Gris', hex:'#747474ff', s: 9 , imgCambio: 'img/ecocuero_gris.png'}
+    ] },
     // 13. Falda con Tachas
-    { id: 13, nombre: "Falda con Tachas", precio: 18990, img: "https://i.pinimg.com/1200x/7f/83/06/7f8306afd76b6565ef0608a602f496fd.jpg", tallas: [{t:'S', s:5}, {t:'M', s:0}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [{c:'Negro', hex:'#000', s:5}] },
+    { id: 13, nombre: "Falda con Tachas", precio: 18990, img: "https://i.pinimg.com/1200x/7f/83/06/7f8306afd76b6565ef0608a602f496fd.jpg", tallas: [{t:'S', s:5}, {t:'M', s:0}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [
+        {c:'Negro', hex:'#000', s:5, imgCambio: 'https://i.pinimg.com/1200x/7f/83/06/7f8306afd76b6565ef0608a602f496fd.jpg'},
+    ] },
     // 14. Falda Encaje
-    { id: 14, nombre: "Falda Encaje", precio: 10990, img: "https://i.pinimg.com/1200x/57/06/db/5706db7f1b957b174f7683c3d246e90a.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}, {t:'3XL', s:2}], colores: [{c:'Lila', hex:'#c8a2c8', s:5}] },
+    { id: 14, nombre: "Falda Encaje", precio: 10990, img: "https://i.pinimg.com/1200x/57/06/db/5706db7f1b957b174f7683c3d246e90a.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}, {t:'3XL', s:2}], colores: [
+        {c:'Lila', hex:'#c8a2c8', s:5, imgCambio: ''},
+        {c:'Celeste', hex:'#', s: 8 , imgCambio: ''},
+        {c:'Rosada', hex:'#', s: 12 , imgCambio: ''}
+    ] },
     // 15. Falda con Hebillas
     { id: 15, nombre: "Falda con Hebillas", precio: 13990, img: "https://i.pinimg.com/736x/74/79/04/747904606ef24e86b8062467c3cca63f.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:2}, {t:'XXL', s:2}], colores: [{c:'Gris', hex:'#808080', s:5}] },
     // 16. Top Floral con Moño
-    { id: 16, nombre: "Top Floral con Moño", precio: 9990, img: "https://i.pinimg.com/1200x/ef/86/a6/ef86a601c7da6484ff67106794f9fb35.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [{c:'Lila', hex:'#e6e6fa', s:5}] },
+    { id: 16, nombre: "Top Floral con Moño", precio: 9990, img: "https://i.pinimg.com/1200x/ef/86/a6/ef86a601c7da6484ff67106794f9fb35.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [
+        {c:'Lila', hex:'#e6e6fa', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 17. Top Asimétrico Efecto Cuero
-    { id: 17, nombre: "Top Asimétrico Efecto Cuero", precio: 9990, img: "https://i.pinimg.com/736x/46/f8/d7/46f8d723a2aa0387811aa1fafeb45b85.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [{c:'Burdeo', hex:'#800020', s:5}] },
+    { id: 17, nombre: "Top Asimétrico Efecto Cuero", precio: 9990, img: "https://i.pinimg.com/736x/46/f8/d7/46f8d723a2aa0387811aa1fafeb45b85.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}], colores: [
+        {c:'Burdeo', hex:'#800020', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 18. Top Asimétrico
-    { id: 18, nombre: "Top Asimétrico", precio: 7990, img: "https://i.pinimg.com/736x/d0/83/28/d0832852f3227a8c685af591c2168308.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:2}, {t:'XXL', s:2}], colores: [{c:'Marrón', hex:'#a52a2a', s:5}] },
+    { id: 18, nombre: "Top Asimétrico", precio: 7990, img: "https://i.pinimg.com/736x/d0/83/28/d0832852f3227a8c685af591c2168308.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:2}, {t:'XXL', s:2}], colores: [
+        {c:'Marrón', hex:'#a52a2a', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 19. Top con Lazo
-    { id: 19, nombre: "Top con Lazo", precio: 6990, img: "https://i.pinimg.com/736x/8c/02/b7/8c02b78a51d7ab7d6f6279cd8e530ac8.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [{c:'Burdeo', hex:'#800020', s:5}] },
+    { id: 19, nombre: "Top con Lazo", precio: 6990, img: "https://i.pinimg.com/736x/8c/02/b7/8c02b78a51d7ab7d6f6279cd8e530ac8.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [
+        {c:'Burdeo', hex:'#800020', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 20. Jeans Cargo Desgastado
     { id: 20, nombre: "Jeans Cargo Desgastado", precio: 24990, img: "https://i.pinimg.com/736x/a6/2f/40/a62f40c9a7fbc0b3f1764cdd5ddb78be.jpg", tallas: [{t:'40', s:5}, {t:'42', s:5}, {t:'44', s:5}, {t:'46', s:5}, {t:'48', s:3}, {t:'50', s:2}], colores: [{c:'Gris', hex:'#696969', s:5}] },
     // 21. Set Top + Falda Cuadrillé
-    { id: 21, nombre: "Set Top + Falda Cuadrillé", precio: 24990, img: "https://i.pinimg.com/736x/57/c0/25/57c025cc470140457b354fe5843c0fdf.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}, {t:'3XL', s:2}], colores: [{c:'Café', hex:'#8b4513', s:5}] },
+    { id: 21, nombre: "Set Top + Falda Cuadrillé", precio: 24990, img: "https://i.pinimg.com/736x/57/c0/25/57c025cc470140457b354fe5843c0fdf.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}, {t:'3XL', s:2}], colores: [
+        {c:'Café', hex:'#8b4513', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 22. Vestido con Pliegues
     { id: 22, nombre: "Vestido con Pliegues", precio: 19990, img: "https://i.pinimg.com/736x/f3/65/c9/f365c9cdd7e080aa241569f5b162c5c1.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}, {t:'4XL', s:2}], colores: [{c:'Gris', hex:'#a9a9a9', s:5}] },
     // 23. Vestido Mangas Cuadrillé
@@ -124,36 +191,103 @@ const productos = [
     // 30. Shorts Denim Araña
     { id: 30, nombre: "Shorts Denim Araña", precio: 12990, img: "https://i.pinimg.com/1200x/1d/df/ca/1ddfcaf59dfdda67d5dc4763f138beb8.jpg", tallas: [{t:'36', s:5}, {t:'38', s:5}, {t:'40', s:5}, {t:'42', s:5}], colores: [{c:'Negro', hex:'#2f4f4f', s:5}] },
     // 31. Set Top + Short Rayado
-    { id: 31, nombre: "Set Top + Short Rayado", precio: 11990, img: "https://i.pinimg.com/1200x/8f/14/ba/8f14baa94119318bf3a23be0e8f02e44.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}], colores: [{c:'Celeste', hex:'#b0e0e6', s:5}] },
+    { id: 31, nombre: "Set Top + Short Rayado", precio: 11990, img: "https://i.pinimg.com/1200x/8f/14/ba/8f14baa94119318bf3a23be0e8f02e44.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}], colores: [
+        {c:'Celeste', hex:'#b0e0e6', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 32. Short Rayado
-    { id: 32, nombre: "Short Rayado", precio: 10990, img: "https://i.pinimg.com/1200x/8f/21/65/8f21658f6dccbff6ffff849e56a5e647.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}], colores: [{c:'Rosa', hex:'#ffb6c1', s:5}] },
+    { id: 32, nombre: "Short Rayado", precio: 10990, img: "https://i.pinimg.com/1200x/8f/21/65/8f21658f6dccbff6ffff849e56a5e647.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}], colores: [
+        {c:'Rosa', hex:'#ffb6c1', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 33. Short Denim Margarita
     { id: 33, nombre: "Short Denim Margarita", precio: 12990, img: "https://i.pinimg.com/736x/e2/35/da/e235da80c1856d3bcec997c2810e9f08.jpg", tallas: [{t:'36', s:5}, {t:'38', s:5}, {t:'40', s:5}, {t:'42', s:5}, {t:'44', s:5}], colores: [{c:'Azul', hex:'#87ceeb', s:5}] },
     // 34. Short Texturado con Cinturón
-    { id: 34, nombre: "Short Texturado con Cinturón", precio: 14990, img: "https://i.pinimg.com/1200x/af/c7/4e/afc74e863c2f90b9eec861c615e42b5c.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [{c:'Blanco', hex:'#fff', s:5}] },
+    { id: 34, nombre: "Short Texturado con Cinturón", precio: 14990, img: "https://i.pinimg.com/1200x/af/c7/4e/afc74e863c2f90b9eec861c615e42b5c.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [
+        {c:'Blanco', hex:'#fff', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+        
+    ] },
     // 35. Short Floral con Encaje
     { id: 35, nombre: "Short Floral con Encaje", precio: 12990, img: "https://i.pinimg.com/1200x/17/e2/7a/17e27a421887e09f8878167199845fc3.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}], colores: [{c:'Blanco', hex:'#f8f8ff', s:5}] },
     // 36. Enterito Denim Estrella
     { id: 36, nombre: "Enterito Denim Estrella", precio: 15990, img: "https://i.pinimg.com/1200x/36/80/ad/3680ad2a10eda99411cc62eb70d5bb94.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:4}], colores: [{c:'Azul', hex:'#4169e1', s:5}] },
     // 37. Enterito Floral
-    { id: 37, nombre: "Enterito Floral", precio: 13990, img: "https://i.pinimg.com/1200x/a3/3f/19/a33f19f4f81b699e704e529f5f25fe48.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}, {t:'4XL', s:2}], colores: [{c:'Beige', hex:'#f5f5dc', s:5}] },
+    { id: 37, nombre: "Enterito Floral", precio: 13990, img: "https://i.pinimg.com/1200x/a3/3f/19/a33f19f4f81b699e704e529f5f25fe48.jpg", tallas: [{t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:3}, {t:'4XL', s:2}], colores: [
+        {c:'Beige', hex:'#f5f5dc', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 38. Enterito Corazones
-    { id: 38, nombre: "Enterito Corazones", precio: 14990, img: "https://i.pinimg.com/1200x/4b/a1/7e/4ba17e104edcc39f341c3cc0601396e2.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [{c:'Beige', hex:'#f5f5dc', s:5}] },
+    { id: 38, nombre: "Enterito Corazones", precio: 14990, img: "https://i.pinimg.com/1200x/4b/a1/7e/4ba17e104edcc39f341c3cc0601396e2.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [
+        {c:'Beige', hex:'#f5f5dc', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 39. Enterito Floral
-    { id: 39, nombre: "Enterito Floral", precio: 17990, img: "https://i.pinimg.com/1200x/42/93/a7/4293a73cb4dc47e285da0fb42f578c49.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}], colores: [{c:'Beige', hex:'#f5f5dc', s:5}] },
+    { id: 39, nombre: "Enterito Floral", precio: 17990, img: "https://i.pinimg.com/1200x/42/93/a7/4293a73cb4dc47e285da0fb42f578c49.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:2}], colores: [
+        {c:'Beige', hex:'#f5f5dc', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 40. Enterito con Detalles
-    { id: 40, nombre: "Enterito con Detalles", precio: 16990, img: "https://i.pinimg.com/1200x/c6/b8/f0/c6b8f0327ec83648c5d2c49d56edc92a.jpg", tallas: [{t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [{c:'Negro', hex:'#000', s:5}] },
+    { id: 40, nombre: "Enterito con Detalles", precio: 16990, img: "https://i.pinimg.com/1200x/c6/b8/f0/c6b8f0327ec83648c5d2c49d56edc92a.jpg", tallas: [{t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:5}, {t:'3XL', s:2}], colores: [
+        {c:'Negro', hex:'#000', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 41. Enterito con Lazos
-    { id: 41, nombre: "Enterito con Lazos", precio: 17490, img: "https://i.pinimg.com/1200x/da/88/7d/da887dd1ca0dcaf3f4cb72f4c0cb7407.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [{c:'Gris', hex:'#708090', s:5}] },
+    { id: 41, nombre: "Enterito con Lazos", precio: 17490, img: "https://i.pinimg.com/1200x/da/88/7d/da887dd1ca0dcaf3f4cb72f4c0cb7407.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}], colores: [
+        {c:'Gris', hex:'#708090', s:5, imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     // 42. Enterito con Tirantes
-    { id: 42, nombre: "Enterito con Tirantes", precio: 14490, img: "https://i.pinimg.com/1200x/b4/7b/03/b47b0342fa2c7c9332e9976ac2f06387.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:3}], colores: [{c:'Beige', hex:'#f5f5dc', s:5}] },
-    
-    // ESCENARIO 4 (HU-02 y HU-03): Sin tallas ni colores (Error)
-    { id: 43, nombre: "Enterito con Cinturón", precio: 15990, img: "https://i.pinimg.com/1200x/56/50/f5/5650f55d0d7a3df6391d237a64a7b8f7.jpg", tallas: [], colores: [] },
+    { id: 42, nombre: "Enterito con Tirantes", precio: 14490, img: "https://i.pinimg.com/1200x/b4/7b/03/b47b0342fa2c7c9332e9976ac2f06387.jpg", tallas: [{t:'S', s:5}, {t:'M', s:5}, {t:'L', s:5}, {t:'XL', s:5}, {t:'XXL', s:3}], colores: [
+        {c:'Beige', hex:'#f5f5dc', s:5, imgCambio:''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
+    //43. Enterito con Cinturón
+    { id: 43, nombre: "Enterito con Cinturón", precio: 15990, img: "https://i.pinimg.com/1200x/56/50/f5/5650f55d0d7a3df6391d237a64a7b8f7.jpg", tallas: [{t:'S', s:3},{t:'M', s:5},{t:'L', s:0},{t:'XL', s:5}, {t:'XXL', s:5}], colores: [
+        {c:'Blanco', hex:'#ffffff', s:4, imgCambio:'https://i.pinimg.com/1200x/56/50/f5/5650f55d0d7a3df6391d237a64a7b8f7.jpg'},
+        {c:'', hex:'#', s: 8 , imgCambio: ''},
+        {c:'', hex:'#', s: 8 , imgCambio: ''}
+    ] },
     
     // ESCENARIO ERROR (HU-01): Imagen Rota
-    { id: 44, nombre: "Top Básico", precio: 9990, img: "img/imagenotfoud.png", tallas: [{t:'S', s:5}], colores: [{c:'Blanco', hex:'#fff', s:5}] } 
+    { id: 44, nombre: "Olive Élise Top", precio: 9990, img: "img/imagenotfoud.png", tallas: [{t:'S', s:5},{t:'M', s:5},{t:'L', s:0},{t:'XL', s:5}, {t:'XXL', s:5}], colores: [{c:'Verde Oliva', hex:'#6B7A4B', s:5}] } 
 ];
+// ======================================================
+// 1. AGOTAR COMPLETAMENTE PRODUCTOS AL AZAR
+// ======================================================
+function agotarProductosCompletamente(cantidad = 4) {
+    const indices = new Set();
+
+    while (indices.size < cantidad) {
+        const rand = Math.floor(Math.random() * productos.length);
+
+        // Solo elegir productos que sí tienen tallas/colores
+        if (
+            (productos[rand].tallas && productos[rand].tallas.length > 0) ||
+            (productos[rand].colores && productos[rand].colores.length > 0)
+        ) {
+            indices.add(rand);
+        }
+    }
+
+    // Aplicar el agotamiento completo
+    indices.forEach(i => {
+        productos[i].tallas = [];
+        productos[i].colores = [];
+    });
+
+    console.log("Productos agotados completamente:", Array.from(indices));
+}
+
+agotarProductosCompletamente(5);
+
 
 // ==========================================
 // 2. GESTIÓN GLOBAL DEL CARRITO
@@ -384,31 +518,104 @@ window.abrirDetalle = (idProducto) => {
     imgEl.src = prod.img;
     imgEl.onerror = () => { imgEl.src = imagenPorDefecto; };
     imgEl.style.opacity = '1'; // Reset opacity
+    imgEl.classList.remove("img-agotada");
 
-    // Render Colores
+
+    /* ======================================================
+    MARCAR AGOTADO EN EL MODAL Y BLOQUEAR BOTÓN
+    ====================================================== */
+
+    const modalContent = document.querySelector('#modalProducto .modal-content');
+    modalContent.classList.remove("modal-agotado");
+
+    // Calcular stock total
+    let totalStock = 0;
+    if (prod.tallas && prod.tallas.length > 0) {
+        totalStock = prod.tallas.reduce((acc, t) => acc + t.s, 0);
+    }
+
+    // ===============================================
+    //  A) PRODUCTO COMPLETAMENTE AGOTADO
+    // ===============================================
+    if (
+        (!prod.tallas || prod.tallas.length === 0) &&
+        (!prod.colores || prod.colores.length === 0)
+    ) {
+        modalContent.classList.add("modal-agotado");
+
+        const imgModal = document.getElementById('modalImg');
+        imgModal.src = prod.img;
+
+        // Aplicar efecto gris
+        imgModal.classList.add("img-agotada");
+
+
+        // Mensaje principal bajo la cantidad
+        msgStock.innerText = "Producto no disponible";
+        msgStock.className = "text-danger fw-bold mb-3";
+
+        // Deshabilitar controles
+        inputCant.disabled = true;
+        document.getElementById('btnRestar').disabled = true;
+        document.getElementById('btnSumar').disabled = true;
+        btnAgregar.disabled = true;
+        btnAgregar.classList.add("disabled");
+
+        // Mostrar mensajes de "no disponibles"
+        document.getElementById('contenedorColores').innerHTML = `
+            <div class="alert alert-light border-danger text-danger fw-semibold py-2 rounded-3">
+                ⚠️ Colores no disponibles
+            </div>
+        `;
+
+        document.getElementById('contenedorTallas').innerHTML = `
+            <div class="alert alert-light border-danger text-danger fw-semibold py-2 rounded-3">
+                ⚠️ Tallas no disponibles
+            </div>
+        `;
+
+        modalProducto.show();
+        return;
+    }
+
+
+    /* ============================================================
+    RENDERIZAR COLORES (AUNQUE EL PRODUCTO ESTÉ AGOTADO)
+    ============================================================ */
     const divColores = document.getElementById('contenedorColores');
     divColores.innerHTML = "";
-    if(!prod.colores || prod.colores.length === 0) divColores.innerHTML = `<span class="aviso-error">⚠️ Colores no disponibles</span>`;
-    else {
+
+    if (!prod.colores || prod.colores.length === 0) {
+
+        divColores.innerHTML = `
+            <span class="aviso-error d-block text-danger fw-bold">
+                ⚠️ Colores no disponibles
+            </span>
+        `;
+
+    } else {
+
         prod.colores.forEach(c => {
+
             const btn = document.createElement('div');
             btn.className = c.s > 0 ? 'btn-color' : 'btn-color sin-stock';
             btn.style.backgroundColor = c.hex;
             btn.title = c.c;
-            if(c.s > 0) {
+
+            if (c.s > 0 && totalStock > 0) {
                 btn.onclick = () => {
-                    // Visual
-                    document.querySelectorAll('.btn-color').forEach(b => b.classList.remove('active'));
+
+                    document.querySelectorAll('.btn-color')
+                        .forEach(b => b.classList.remove('active'));
+
                     btn.classList.add('active');
-                    
-                    // Logic
+
                     colorSeleccionado = c.c;
 
-                    // CAMBIO DE IMAGEN DINÁMICO
+                    // Cambio de imagen dinámico
                     const imgPrincipal = document.getElementById('modalImg');
                     const nuevaImagen = c.imgCambio ? c.imgCambio : prod.img;
-                    
-                    // Efecto de transición
+
                     imgPrincipal.style.opacity = '0.5';
                     setTimeout(() => {
                         imgPrincipal.src = nuevaImagen;
@@ -418,31 +625,54 @@ window.abrirDetalle = (idProducto) => {
                     chequearSeleccion();
                 };
             }
+
             divColores.appendChild(btn);
         });
     }
 
-    // Render Tallas
+
+    /* ============================================================
+    RENDERIZAR TALLAS (AUNQUE EL PRODUCTO ESTÉ AGOTADO)
+    ============================================================ */
     const divTallas = document.getElementById('contenedorTallas');
     divTallas.innerHTML = "";
-    if(!prod.tallas || prod.tallas.length === 0) divTallas.innerHTML = `<span class="aviso-error">⚠️ Tallas no disponibles</span>`;
-    else {
+
+    if (!prod.tallas || prod.tallas.length === 0) {
+
+        divTallas.innerHTML = `
+            <span class="aviso-error d-block text-danger fw-bold">
+                ⚠️ Tallas no disponibles
+            </span>
+        `;
+
+    } else {
+
         prod.tallas.forEach(t => {
+
             const btn = document.createElement('button');
             btn.innerText = t.t;
             btn.className = t.s > 0 ? 'btn-talla' : 'btn-talla sin-stock';
-            if(t.s > 0) {
+
+            if (t.s > 0 && totalStock > 0) {
                 btn.onclick = () => {
-                    document.querySelectorAll('.btn-talla').forEach(b => b.classList.remove('active'));
+
+                    document.querySelectorAll('.btn-talla')
+                        .forEach(b => b.classList.remove('active'));
+
                     btn.classList.add('active');
+
                     tallaSeleccionada = t.t;
                     maxStockActual = t.s;
+
                     chequearSeleccion();
                 };
             }
+
             divTallas.appendChild(btn);
         });
     }
+
+
 
     const chequearSeleccion = () => {
         if(colorSeleccionado && tallaSeleccionada) {
